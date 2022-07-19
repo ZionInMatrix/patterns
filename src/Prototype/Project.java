@@ -1,11 +1,9 @@
 package Prototype;
 
-import java.util.Properties;
-
 public class Project implements Copyable {
-    private int id;
-    private String projectName;
-    private String sourceCode;
+    private final int id;
+    private final String projectName;
+    private final String sourceCode;
 
     public Project(int id, String projectName, String sourceCode) {
         this.id = id;
@@ -13,34 +11,9 @@ public class Project implements Copyable {
         this.sourceCode = sourceCode;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getSourceCode() {
-        return sourceCode;
-    }
-
-    public void setSourceCode(String sourceCode) {
-        this.sourceCode = sourceCode;
-    }
-
     @Override
     public Object copy() {
-        Project copy = new Project(id, projectName, sourceCode);
-        return copy;
+        return new Project(id, projectName, sourceCode);
     }
 
     @Override
